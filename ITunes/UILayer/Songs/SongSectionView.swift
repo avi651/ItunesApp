@@ -14,7 +14,7 @@ struct SongSectionView: View {
                      count: 4)
     
     var body: some View {
-        ScrollView(.horizmontal) {
+        ScrollView(.horizontal) {
             LazyHGrid(rows: rows, spacing: 15) {
                 
                 ForEach(songs) { song in

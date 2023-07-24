@@ -76,7 +76,7 @@ class APIService {
     private func createURL(for id: Int,type: EntityType) -> URL? {
         let baseURL = "\(APIConstant.baseURL)/lookup"
         
-        var queryItems = [URLQueryItem(name: "id", value: String(id)),
+        let queryItems = [URLQueryItem(name: "id", value: String(id)),
                           URLQueryItem(name: "entity", value: type.rawValue)]
         
         var components = URLComponents(string: baseURL)

@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct MovieSearchListView: View {
+    
+    @StateObject private var viewModel = MovieListViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Group {
+                if viewModel.searchTerm.isEmpty {
+                    SearchPlaceholderView(searchTerm: $viewModel.searchTerm)
+                } else {
+                    MovieListView(viewModel: viewModel)
+                }
+            }
+            .searchable(text: $viewModel.searchTerm)
+            .navigationTitle("Search Movies")
+        }
     }
 }
 

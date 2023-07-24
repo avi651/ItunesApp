@@ -65,7 +65,7 @@ class MovieListViewModel: ObservableObject {
         }
     }
     
-    private func loadMore() {
+    internal func loadMore() {
         fetchMovies(for: searchTerm)
     }
     

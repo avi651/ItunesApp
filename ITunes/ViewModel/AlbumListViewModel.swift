@@ -39,7 +39,7 @@ class AlbumListViewModel: ObservableObject {
         page = 0
     }
     
-    private func loadMore() {
+    internal func loadMore() {
         fetchAlbums(for: searchTerm)
     }
     
