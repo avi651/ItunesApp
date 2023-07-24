@@ -29,6 +29,7 @@ class AlbumListViewModel: ObservableObject {
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
             .sink { [weak self] term in
                 self?.clear()
+                self?.fetchAlbums(for: term)
             }.store(in: &subscriptions)
     }
     
